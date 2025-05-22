@@ -35,7 +35,6 @@ header {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    position: sticky;
     top: 0;
     padding: 0.5% 3%;
     border-bottom: solid 1px gray;
@@ -70,7 +69,6 @@ header nav a:hover {
 }
 
 #accueil {
-    min-height: 1fr;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -110,46 +108,55 @@ header nav a:hover {
 
 #services {
     min-height: 100vh;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-template-rows: masonry;
-    grid-template-areas:
-        "mariages mariages mariages bebes bebes bebes"
-        "mariages mariages mariages bebes bebes bebes"
-        "famille famille famille events events art"
-        "famille famille famille events events art"
-    ;
 }
 
-.mariages {
-    background-image: url("../media/pexels-asad-photo-maldives-1024993.jpg");
-    background-size: cover;
-}
+
 
 #pourquoi-anna {
     min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-#contact {
+.pourquoi-flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+#contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas:
+        "info map"
+    ;
+    align-items: center;
+    gap: 1rem;
     padding: 1rem;
     min-height: 100vh;
 }
 
-.contact-info {
-    align-self: first baseline;
-}
-
-#contact p{
-font-size: 0.9rem;
-}
-
 .map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
-    align-self: last baseline;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 0.9rem;
 }
 
 hr {
@@ -166,10 +173,10 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem;
-    font-family: 'Lato', sans-serif;
-    min-height: 10vh;
+    padding: 0.5% 3%;
     border-top: solid 1px gray;
+    background-color: #f9e6e0;
+    min-height: 10vh;
 }
 
 footer nav a {
@@ -178,7 +185,6 @@ footer nav a {
     padding: 0.5rem;
     transition: 0.25s;
     bottom: 0;
-    padding: 0.5% 3%;
 }
 
 footer nav a:hover {

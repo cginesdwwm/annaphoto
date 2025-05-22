@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
-    background-color: red;
+    background-color: #f9e6e0;
     color: black;
 }
 
@@ -16,13 +16,31 @@ html {
     scroll-behavior: smooth;
 }
 
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.2rem;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+h2,
+h3 {
+    font-family: 'Libre Baskerville', serif;
+}
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    position: sticky;
     top: 0;
-    padding: 0 2.5%;
+    padding: 0.5% 3%;
+    border-bottom: solid 1px gray;
+    background-color: #f9e6e0;
+    min-height: 10vh;
 }
 
 header h1 {
@@ -39,18 +57,19 @@ header img {
     max-width: 120px;
 }
 
-section {
-    margin: 0 auto;
+header nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: 0.25s;
 }
 
-.section-title {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
+header nav a:hover {
+    color: gray;
+    transition: 0.25s;
 }
 
-#about {
+#accueil {
     min-height: 1fr;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -61,11 +80,12 @@ section {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
+    min-height: 100vh;
 }
 
-#about img {
-    height: 500px;
-    border-radius: 5px;
+#accueil img {
+    height: 600px;
+    border-radius: 10px;
 }
 
 .pic1 {
@@ -88,11 +108,12 @@ section {
     text-align: center;
 }
 
-.services{
+#services {
+    min-height: 100vh;
     display: grid;
-    gap: 0.1rem 0.1rem;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-rows: masonry;
     grid-template-areas:
         "mariages mariages mariages bebes bebes bebes"
         "mariages mariages mariages bebes bebes bebes"
@@ -106,15 +127,24 @@ section {
     background-size: cover;
 }
 
+#pourquoi-anna {
+    min-height: 100vh;
+}
+
 #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
+    min-height: 100vh;
 }
 
 .contact-info {
     align-self: first baseline;
+}
+
+#contact p{
+font-size: 0.9rem;
 }
 
 .map {
@@ -134,8 +164,41 @@ hr {
 footer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 1rem;
     font-family: 'Lato', sans-serif;
+    min-height: 10vh;
+    border-top: solid 1px gray;
+}
+
+footer nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: 0.25s;
+    bottom: 0;
+    padding: 0.5% 3%;
+}
+
+footer nav a:hover {
+    color: gray;
+    transition: 0.25s;
+}
+
+/* CLASSES GENERALES */
+.text-start {
+    text-align: start;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
 }
